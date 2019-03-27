@@ -48,7 +48,7 @@ f x exit =
   else exit
 ```
 
-But unlike regular guards, ``#?`` allows for arbitrary monadic effects in the "guards":
+But unlike regular guards, ``#?`` allows for arbitrary monadic effects:
 
 ```haskell
 example :: IO ()
