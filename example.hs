@@ -23,7 +23,7 @@ import Control.Lens
 'sum-is-not-six
 -}
 
-m :: (Num a, Monad m, Eq a) => [a] -> m [Char]
+m :: (Num a, Monad m, Eq a) => [a] -> m String
 m x =
   $((#?)
      [| case x of
@@ -31,7 +31,7 @@ m x =
          [a, b, c] -> \_ -> return "sum is not six"
       |])
 
-f :: (Eq a, Num a, Monad m) => [a] -> m [Char] -> m [Char]
+f :: (Eq a, Num a, Monad m) => [a] -> m String -> m String
 f x exit =
   if 6 == sum x then return "sum is six"
   else exit
